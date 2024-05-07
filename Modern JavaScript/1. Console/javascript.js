@@ -37,3 +37,4 @@ console.log('new section');
 console.log("%c This is some styled text","color:red; font-size:50px");
 const styles = 'padding: 10px; background-color: white; color: green;';
 console.log('%cHello', styles);
+//
