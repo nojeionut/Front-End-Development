@@ -81,5 +81,3 @@ console.log(x);
 x = s.split('');
 
 console.log(x);
-
-
