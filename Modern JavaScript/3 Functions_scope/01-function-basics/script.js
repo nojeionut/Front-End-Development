@@ -5,7 +5,7 @@ function sayHello() {
 
 // Invoke, execute or call a function
 sayHello();
-
+ 
 // Define a function with parameters
 function add(num1, num2) {
   console.log(num1 + num2);
