@@ -16,7 +16,7 @@ const double = (a) => a * 2;
 
 // Returning an object
 const createObj = () => ({
-  name: 'Brad',
+  name: 'noe',
 });
 
 const numbers = [1, 2, 3, 4, 5];

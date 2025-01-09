@@ -1,0 +1,7 @@
+html
+css
+javascript
+typescript
+angular
+java spring boot
+sql
