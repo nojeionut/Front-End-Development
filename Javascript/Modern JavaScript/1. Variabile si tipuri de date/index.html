@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The JavaScript Console</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    h1, h2, h3, h4 {
+      color: #333;
+    }
+    code {
+      background-color: #eee;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="javascript.js"></script>
+</head>
+<body>
+    
+  <h1>The JavaScript Console</h1>
+  <p>When we create front-end websites and applications, we work in the browser environment. We can use JavaScript to manipulate the DOM (Document Object Model) and display different elements and values, but many times, we just need a quick way to show what a value is. We also need a place to see any errors or warnings in our script or any script that runs. This is where the JavaScript console comes in.</p>
+  <p>The console is part of the <strong>Developer Tools</strong> in the browser. In most browsers, you can open the dev tools with <code>F12</code> on a Windows PC and <code>CMD+OPT+I</code> on a Mac. From there you have a bunch of tabs and one (usually the second) is the console. You can also use <code>CMD+OPT+J</code> or <code>CTRL+ALT+J</code> to go right to the console.</p>
+  <p>From here you can actually run JavaScript. Try typing in the following directly into the browser console and hit <code>enter</code>.</p>
+  <pre><code>alert('Hello from the console');</code></pre>
+  <p>It should show a browser alert with the text.</p>
+  <h2>Console methods</h2>
+  <p>The <code>global object</code> in the browser environment gives us access to a <code>console</code> object that has a bunch of useful methods that we can use from our JavaScript file to interact with the JavaScript console.</p>
+  <h3><code>console.log()</code></h3>
+  <p>This is the most common console method.</p>
+  <h4>Log a number</h4>
+  <pre><code>console.log(123);</code></pre>
+  <h4>Log a string</h4>
+  <pre><code>console.log('Hello World');</code></pre>
+  <h4>Log multiple values</h4>
+  <pre><code>console.log(123, 'Hello', true);</code></pre>
+  <h4>Log a variable</h4>
+  <pre><code>x = 100;
+console.log(x);</code></pre>
+  <h2><code>console.error()</code></h2>
+  <pre><code>console.error('This is an error');</code></pre>
+  <h2><code>console.warn()</code></h2>
+  <pre><code>console.warn('This is a warning');</code></pre>
+  <h2><code>console.clear()</code></h2>
+  <pre><code>console.clear();</code></pre>
+  <h2><code>console.table()</code></h2>
+  <pre><code>console.table({ name: 'Brad', city: 'Boston' });</code></pre>
+  <h2><code>console.group()</code></h2>
+  <pre><code>console.group('simple');
+console.warn('warning!');
+console.error('error here');
+console.log('Hello World');
+console.groupEnd('simple');
+console.log('new section');</code></pre>
+  <h3>Log with style</h3>
+  <pre><code>const styles = 'padding: 10px; background-color: white; color: green;';
+console.log('%cHello', styles);</code></pre>
+  <p>There are even more methods. See all of them <a href="https://developer.mozilla.org/en-US/docs/Web/API/console" target="_blank">here</a>.</p>
+</body>
+</html>
