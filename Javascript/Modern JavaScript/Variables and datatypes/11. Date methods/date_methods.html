@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Methods in JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+      color: #c7254e;
+    }
+  </style>
+</head>
+<body>
+  <h1>Date Methods in JavaScript</h1>
+
+  <p>There are many useful methods that we can use on the <code>Date</code> object for getting information about the date.</p>
+
+  <h2>Creating a Date Object</h2>
+  <pre><code>let d = new Date();</code></pre>
+
+  <h2>Basic Methods</h2>
+  <pre><code>// Convert the date to a string
+d.toString();
+
+// Get the time in milliseconds
+d.getTime();
+d.valueOf();</code></pre>
+
+  <h2>Getting Specific Parts of the Date</h2>
+  <pre><code>// Get the year
+d.getFullYear();
+
+// Get the month number (0-11)
+d.getMonth();
+d.getMonth() + 1; // Actual month number
+
+// Get the day of the month (1-31)
+d.getDate();
+
+// Get the day of the week (0-6)
+d.getDay();</code></pre>
+
+  <h2>Getting Time Values</h2>
+  <pre><code>// Get the hour (0-23)
+d.getHours();
+
+// Get the minute (0-59)
+d.getMinutes();
+
+// Get the second (0-59)
+d.getSeconds();
+
+// Get the millisecond (0-999)
+d.getMilliseconds();</code></pre>
+
+  <h2>Creating a Custom Date String</h2>
+  <pre><code>`${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; // 2022-7-22</code></pre>
+
+  <h2>Intl.DateTimeFormat API</h2>
+  <p>A modern and powerful way to format dates and times in a locale-sensitive way.</p>
+  <pre><code>new Intl.DateTimeFormat('en-US').format(d); // July 22, 2022
+new Intl.DateTimeFormat('en-GB').format(d); // 22 July, 2022
+new Intl.DateTimeFormat('default').format(d); // July 22, 2022</code></pre>
+
+  <h3>Custom Formatting</h3>
+  <pre><code>new Intl.DateTimeFormat('en-GB', { month: 'long' }).format(d); // July</code></pre>
+
+  <h2>Using toLocaleString()</h2>
+  <p>A simpler way to format dates.</p>
+  <pre><code>d.toLocaleString('default', { month: 'long' }); // July</code></pre>
+
+  <h3>Detailed Date and Time Formatting</h3>
+  <pre><code>d.toLocaleString('default', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  timeZone: 'America/Los_Angeles',
+}); // Friday, July 22, 2022 at 7:30:57 AM</code></pre>
+</body>
+</html>

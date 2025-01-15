@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Type Coercion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #eaeaea;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    a {
+      color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Type Coercion</h1>
+  <p><strong>Type Coercion</strong> is when data types are converted implicitly by JavaScript. Explicit coercion is when conversion is done manually.</p>
+
+  <h2>Types of Coercion</h2>
+  <ul>
+    <li>To String</li>
+    <li>To Number</li>
+    <li>To Boolean</li>
+  </ul>
+
+  <h2>Examples of Type Coercion</h2>
+  <h3>String Concatenation</h3>
+  <pre><code>5 + '5'; // '55' (string)</code></pre>
+  <p>The number 5 is coerced into a string due to the <code>+</code> operator being used for concatenation.</p>
+
+  <h3>Explicit Conversion</h3>
+  <pre><code>5 + Number('5'); // 10</code></pre>
+
+  <h3>Multiplication with String</h3>
+  <pre><code>5 * '5'; // 25 (number)</code></pre>
+  <p>The string '5' is coerced to the number 5 because <code>*</code> only works with numbers.</p>
+
+  <h3>Null Coercion</h3>
+  <pre><code>5 + null; // 5
+Number(null); // 0</code></pre>
+
+  <h3>Boolean Coercion</h3>
+  <pre><code>Number(true); // 1
+Number(false); // 0</code></pre>
+  <pre><code>5 + true; // 6
+5 + false; // 5</code></pre>
+
+  <h3>Undefined Coercion</h3>
+  <pre><code>5 + undefined; // NaN
+Number(undefined); // NaN</code></pre>
+
+  <h3>NaN Behavior</h3>
+  <pre><code>NaN == NaN; // false</code></pre>
+  <p>NaN is not equal to itself due to how JavaScript handles NaN.</p>
+
+  <h3>Checking for NaN</h3>
+  <pre><code>isNaN(NaN); // true
+isNaN('Hello'); // true
+
+Number.isNaN(NaN); // true
+Number.isNaN('Hello'); // false</code></pre>
+
+  <p>Read more about this behavior <a href="https://es5.github.io/#x11.9.6" target="_blank">here</a>.</p>
+</body>
+</html>

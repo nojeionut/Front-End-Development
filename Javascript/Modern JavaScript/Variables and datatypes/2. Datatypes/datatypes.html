@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Data Types</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    code {
+      background-color: #835dda;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    pre {
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    a {
+      color: #1e90ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Data Types</h1>
+  <p>We're going to spend a little time on data types. When we create a variable, the data that we define has a type. There are <code>primitive types</code> and <code>reference types</code>. The big difference under the hood is the way that they're stored and accessed from memory.</p>
+  <ol>
+    <li><strong>Primitive Types</strong> - Stored directly in the location that the variable is accessed</li>
+    <li><strong>Reference Types (Objects)</strong> - Accessed by reference</li>
+  </ol>
+  
+  <h2>Primitive Data Types</h2>
+  <p>The 7 primitive data types are the following:</p>
+  <ul>
+    <li><code>String</code> - A sequence of characters.</li>
+    <li><code>Number</code> - Represents both integer and floating-point numbers.</li>
+    <li><code>Boolean</code> - Represents true or false.</li>
+    <li><code>Null</code> - Intentional absence of any object value.</li>
+    <li><code>Undefined</code> - A variable that hasn't been assigned a value.</li>
+    <li><code>Symbol</code> - Unique identifier.</li>
+    <li><code>BigInt</code> - For numbers larger than Number type can handle.</li>
+  </ul>
+  
+  <h2>Dynamic vs Static Types</h2>
+  <p>JavaScript is dynamically typed, meaning types are associated with values, not variables. Example:</p>
+  <pre><code>const y = 100;</code></pre>
+  <p>In TypeScript:</p>
+  <pre><code>const y: number = 100;</code></pre>
+  
+  <h2>Assigning Variables</h2>
+  <h3>String</h3>
+  <pre><code>const firstName = 'Sara';</code></pre>
+  
+  <h3>Number</h3>
+  <pre><code>const age = 30;
+const temp = 98.9;</code></pre>
+  
+  <h3>Boolean</h3>
+  <pre><code>const hasKids = true;</code></pre>
+  
+  <h3>Null</h3>
+  <pre><code>const aptNumber = null;</code></pre>
+  
+  <h3>Undefined</h3>
+  <pre><code>let score;
+const score = undefined;</code></pre>
+  
+  <h3>Symbol</h3>
+  <pre><code>const id = Symbol('id');</code></pre>
+  
+  <h3>BigInt</h3>
+  <pre><code>const n = 9007199254740991n;</code></pre>
+  
+  <h3>typeof Operator</h3>
+  <pre><code>console.log(typeof name);</code></pre>
+  
+  <h2>Reference Data Types (Objects)</h2>
+  <p>Reference types include <code>Arrays</code>, <code>Functions</code>, and <code>Objects</code>. They are accessed by reference.</p>
+  
+  <h3>Arrays</h3>
+  <pre><code>const numbers = [1, 2, 3, 4];</code></pre>
+  
+  <h3>Object Literals</h3>
+  <pre><code>{
+  name: 'John',
+  age: 30
+}</code></pre>
+  
+  <h3>Functions</h3>
+  <pre><code>const sayHello = function() {
+  return 'Hello';
+};
+
+sayHello();</code></pre>
+  
+  <p>More on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#typeof_null" target="_blank">typeof null</a>.</p>
+</body>
+</html>

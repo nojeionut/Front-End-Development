@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Type Coercion & Strings</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+    h1, h2, h3 { color: #333; }
+    code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+    pre { background-color: #f4f4f4; padding: 10px; border-radius: 4px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Type Coercion</h1>
+  <h2>Implicit and Explicit Type Coercion</h2>
+  <p>JavaScript automatically converts data types when using operators with different types. This is called <strong>Type Coercion</strong>.</p>
+
+  <h3>Examples</h3>
+  <pre><code>5 + '5'; // '55' (string)
+5 * '5'; // 25 (number)
+5 + null; // 5
+5 + undefined; // NaN
+NaN == NaN; // false
+isNaN('Hello'); // true
+Number.isNaN('Hello'); // false</code></pre>
+
+  <h1>Working with Strings</h1>
+  <h2>Concatenation</h2>
+  <p>Using the <code>+</code> operator to combine strings:</p>
+  <pre><code>'Hello' + 'World'; // 'HelloWorld'
+const name = 'John';
+const age = 30;
+'Hello, my name is ' + name + ' and I am ' + age + ' years old';
+</code></pre>
+
+  <h2>Template Literals</h2>
+  <p>Introduced in ES6, template literals simplify string concatenation:</p>
+  <pre><code>const name = 'John';
+const age = 30;
+`Hello, my name is ${name} and I am ${age} years old`;</code></pre>
+
+  <h2>String Properties & Methods</h2>
+  <h3>Length</h3>
+  <pre><code>const greeting = 'Hello World';
+greeting.length; // 11</code></pre>
+
+  <h3>Changing Case</h3>
+  <pre><code>greeting.toUpperCase(); // 'HELLO WORLD'
+greeting.toLowerCase(); // 'hello world'</code></pre>
+
+  <h3>Character Access</h3>
+  <pre><code>greeting.charAt(0); // 'H'
+greeting[3]; // 'l'</code></pre>
+
+  <h3>Finding Index</h3>
+  <pre><code>greeting.indexOf('o'); // 4</code></pre>
+
+  <h3>Extracting Substrings</h3>
+  <pre><code>greeting.substring(0, 4); // 'Hell'
+greeting.slice(-11, -7); // 'Hell'</code></pre>
+
+  <h3>Trimming Whitespace</h3>
+  <pre><code>let x = '   Hello World!   ';
+x = x.trim(); // 'Hello World!'</code></pre>
+
+  <h3>Replacing Content</h3>
+  <pre><code>const url = 'https://traversymedia.com';
+url.replace('traversymedia', 'google'); // 'https://google.com'</code></pre>
+
+  <h3>Checking for Substrings</h3>
+  <pre><code>url.includes('media'); // true</code></pre>
+
+  <h3>Splitting Strings</h3>
+  <pre><code>greeting.split(' '); // ['Hello', 'World']</code></pre>
+</body>
+</html>

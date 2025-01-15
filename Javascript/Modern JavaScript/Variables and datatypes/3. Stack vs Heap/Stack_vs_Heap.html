@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stack vs Heap Memory Allocation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stack vs Heap Memory Allocation</h1>
+  <p>Now we're going to look at how <code>primitive</code> and <code>reference</code> type data is stored in memory. One thing I really want to mention is that if you're a beginner or even intermediate, this may seem a little confusing but that's absolutely fine.</p>
+  <p>What's really important right now is that you just know the types and know how to create variables.</p>
+
+  <h2>Garbage Collection</h2>
+  <p>JavaScript uses something called <strong>garbage collection</strong>. With some low-level languages such as <code>C</code> and <code>C++</code>, you actually have to manage your own memory. More modern interpreted languages like <code>JavaScript</code> and <code>Python</code> automate this process.</p>
+
+  <h2>Memory Allocation</h2>
+  <p>JavaScript engine allocates variables into two different locations called the <code>stack</code> and the <code>heap</code>.</p>
+
+  <pre><code>const name = 'John';
+const age = 30;
+  </code></pre>
+  <img src="stack_example.png">
+
+  <pre><code>const person = {
+  name: 'Brad',
+  age: 40
+}
+  </code></pre>
+  <img src="heap_example.png">
+
+  <pre><code>const newName = name;
+  </code></pre>
+  <img src="primitive copy example.png">
+
+  <pre><code>newName = 'Jonathan';
+  </code></pre>
+  <img src="primitive change.png">
+
+  <pre><code>const newPerson = person;
+  </code></pre>
+  <img src="reference copy.png">
+
+  <pre><code>newPerson.name = 'Bradley';
+  </code></pre>
+  <img src="reference change.png">
+
+  <p>At some point, this knowledge will come in handy when you get into more advanced programming. It's not really beginner stuff, but learning it now gives you a leg up.</p>
+</body>
+</html>

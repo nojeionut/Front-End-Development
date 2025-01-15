@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Object in JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+      color: #c7254e;
+    }
+  </style>
+</head>
+<body>
+  <h1>Math Object</h1>
+  <p>JavaScript has a built-in object called <code>Math</code>. This object has various methods for mathematical operations, like finding the square root, absolute value, rounding numbers, and generating random numbers.</p>
+  
+  <h2>Exploring the Math Object</h2>
+  <pre><code>console.log(Math);</code></pre>
+
+  <h2>Common Math Methods</h2>
+  
+  <h3>Math.abs()</h3>
+  <p>Returns the absolute value of a number:</p>
+  <pre><code>Math.abs(-5); // 5</code></pre>
+
+  <h3>Math.round()</h3>
+  <p>Rounds a number to the nearest integer:</p>
+  <pre><code>Math.round(5.5); // 6</code></pre>
+
+  <h3>Math.ceil()</h3>
+  <p>Rounds a number up to the next largest integer:</p>
+  <pre><code>Math.ceil(5.5); // 6</code></pre>
+
+  <h3>Math.floor()</h3>
+  <p>Rounds a number down to the nearest integer:</p>
+  <pre><code>Math.floor(5.5); // 5</code></pre>
+
+  <h3>Math.sqrt()</h3>
+  <p>Returns the square root of a number:</p>
+  <pre><code>Math.sqrt(25); // 5</code></pre>
+
+  <h3>Math.pow()</h3>
+  <p>Raises a number to a specific power:</p>
+  <pre><code>Math.pow(5, 2); // 25</code></pre>
+
+  <h3>Math.min()</h3>
+  <p>Finds the smallest of given numbers:</p>
+  <pre><code>Math.min(5, 10); // 5</code></pre>
+
+  <h3>Math.max()</h3>
+  <p>Finds the largest of given numbers:</p>
+  <pre><code>Math.max(5, 10); // 10</code></pre>
+
+  <h3>Math.random()</h3>
+  <p>Generates a random number between 0 and 1:</p>
+  <pre><code>Math.random(); // e.g., 0.83929</code></pre>
+  
+  <p>Generating a random integer between 1 and 10:</p>
+  <pre><code>Math.floor(Math.random() * 10) + 1; // e.g., 5</code></pre>
+  
+  <p>Generating a random integer between two numbers (min and max):</p>
+  <pre><code>const min = 10;
+const max = 20;
+const x = Math.floor(Math.random() * (max - min + 1)) + min; // e.g., 17</code></pre>
+</body>
+</html>

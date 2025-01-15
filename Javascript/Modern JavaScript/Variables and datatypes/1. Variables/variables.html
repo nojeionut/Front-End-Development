@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="javascript.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Variables Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+    
+  <h1>Variables</h1>
+  <p>Variables are containers for pieces of data. That data can be one of many different data types. We'll explore data types later, but for now, let's focus on creating and re-assigning variables.</p>
+
+  <h2>Declaring a Variable</h2>
+  <p>In JavaScript, variables are declared using one of three keywords:</p>
+  <ul>
+    <li><code>var</code></li>
+    <li><code>let</code></li>
+    <li><code>const</code></li>
+  </ul>
+  <pre><code>let firstName = 'John';
+let lastName = 'Doe';
+console.log(firstName, lastName);
+let age = 30;
+console.log(age);</code></pre>
+
+  <h2>Variable Naming Conventions</h2>
+  <ul>
+    <li>Only letters, numbers, underscores, and dollar signs are allowed.</li>
+    <li>Cannot start with a number.</li>
+  </ul>
+  <h3>Multi-Word Variables</h3>
+  <pre><code>let firstName = 'John'; // camelCase
+let first_name = 'Sara'; // snake_case
+let FirstName = 'Tom'; // PascalCase</code></pre>
+
+  <h2>Reassigning Values</h2>
+  <p>Variables declared with <code>let</code> can be reassigned:</p>
+  <pre><code>let x = 100;
+x = 200;
+let score;
+score = 1;</code></pre>
+  <p><code>const</code> cannot be reassigned or declared without a value:</p>
+  <pre><code>const x = 100;
+x = 200; // Error
+const score1; // Error</code></pre>
+
+  <h2>Constants with Arrays and Objects</h2>
+  <p>While <code>const</code> prevents reassignment, array and object contents can be modified:</p>
+  <pre><code>const arr = [1, 2, 3, 4];
+arr.push(5); // [1, 2, 3, 4, 5]
+arr[0] = 200; // [200, 2, 3, 4, 5]
+
+const person = { name: 'Brad' };
+person.name = 'John';
+person.email = 'john@gmail.com';
+console.log(person);
+/* {
+  name: 'John',
+  email: 'john@gmail.com'
+} */</code></pre>
+
+  <h2>Declaring Multiple Values</h2>
+  <pre><code>let a, b, c;
+const d = 10, e = 20, f = 30;</code></pre>
+
+  <h2>Let or Const - Which to Use?</h2>
+  <p>Use <code>const</code> by default for values that won't change. Use <code>let</code> when reassignment is needed.</p>
+</body>
+</html>

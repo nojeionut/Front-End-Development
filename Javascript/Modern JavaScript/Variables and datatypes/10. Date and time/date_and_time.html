@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with Dates in JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; background-color: #f4f4f4; }
+    h1, h2, h3 { color: #333; }
+    code { background-color: #eaeaea; padding: 2px 4px; border-radius: 4px; }
+    pre { background-color: #eaeaea; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    .section { background-color: #fff; padding: 20px; border-radius: 5px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+  </style>
+</head>
+<body>
+  <h1>Working With Dates in JavaScript</h1>
+  
+  <div class="section">
+    <h2>Creating a Date Object</h2>
+    <p>Instantiate a <code>Date</code> object with the <code>new</code> keyword:</p>
+    <pre><code>let d;
+d = new Date(); // Fri Jul 22 2022 08:35:10 GMT-0400</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>Converting to a String</h2>
+    <p>Convert a date object to a string using <code>toString()</code>:</p>
+    <pre><code>console.log(typeof d); // object
+d.toString(); // "Fri Jul 22 2022 08:35:10 GMT-0400"
+console.log(typeof d); // string</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>Creating Specific Dates</h2>
+    <p>Create a specific date and time:</p>
+    <pre><code>d = new Date(2022, 6, 10); // Fri Jul 10 2022 00:00:00 GMT-0400
+d = new Date(2022, 6, 10, 12, 30, 0); // Fri Jul 10 2022 12:30:00 GMT-0400</code></pre>
+    <p>Using date strings:</p>
+    <pre><code>d = new Date('2022-07-10T12:30:00');
+d = new Date('07/10/2022 12:30:00');
+d = new Date('2022-07-10 12:30:00');</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>Timestamps</h2>
+    <p>Get the current timestamp:</p>
+    <pre><code>Date.now(); // 1658497991311</code></pre>
+    <p>Get the timestamp of a specific date:</p>
+    <pre><code>d = new Date('07/22/2022');
+d.getTime(); // 1658497991311
+d.valueOf(); // 1658497991311</code></pre>
+    <p>Create a date from a timestamp:</p>
+    <pre><code>d = new Date(1658497991311); // Fri Jul 22 2022 08:35:10 GMT-0400</code></pre>
+    <p>Convert timestamp to seconds:</p>
+    <pre><code>Math.floor(Date.now() / 1000); // 1658498058</code></pre>
+  </div>
+</body>
+</html>

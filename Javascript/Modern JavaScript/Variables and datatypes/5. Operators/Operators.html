@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operators & Arithmetic in JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #444;
+    }
+    code {
+      background-color: #e8e8e8;
+      padding: 3px 5px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    pre {
+      background-color: #e8e8e8;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Operators & Arithmetic</h1>
+  <p>In order to look at implicit type coercion in the next video, we'll be using some operators, so I thought that this would be a good time to go over JavaScript operators. Most of these are in just about every language. This is really easy stuff, but I want to make sure we cover everything.</p>
+  <p>We have a few different types of operators:</p>
+
+  <h2>Arithmetic Operators</h2>
+  <p>Addition, subtraction, multiplication, and division:</p>
+  <pre><code>5 + 5; // 10
+10 - 5; // 5
+5 * 5; // 25
+10 / 2; // 5</code></pre>
+  <p><strong>Concatenation:</strong> The <code>+</code> operator can also be used to concatenate strings:</p>
+  <pre><code>'Hello, ' + 'World!'; // Hello World!</code></pre>
+  <p><strong>Modulus:</strong> Used to get the division remainder:</p>
+  <pre><code>10 % 3; // 1</code></pre>
+  <p><strong>Exponentiation:</strong></p>
+  <pre><code>2 ** 3; // 8</code></pre>
+  <p><strong>Increment:</strong></p>
+  <pre><code>x = 10;
+x++; // 11</code></pre>
+  <p><strong>Decrement:</strong></p>
+  <pre><code>x = 10;
+x--; // 9</code></pre>
+
+  <h2>Assignment Operators</h2>
+  <p><strong>Value assignment:</strong></p>
+  <pre><code>x = 10;</code></pre>
+  <p><strong>Addition assignment:</strong></p>
+  <pre><code>x += 10; // Same as x = x + 10</code></pre>
+  <p><strong>Subtraction assignment:</strong></p>
+  <pre><code>x -= 10; // Same as x = x - 10</code></pre>
+  <p><strong>Multiplication assignment:</strong></p>
+  <pre><code>x *= 10; // Same as x = x * 10</code></pre>
+  <p><strong>Division assignment:</strong></p>
+  <pre><code>x /= 10; // Same as x = x / 10</code></pre>
+  <p><strong>Modulo assignment:</strong></p>
+  <pre><code>x %= 10; // Same as x = x % 10</code></pre>
+  <p><strong>Exponentiation assignment:</strong></p>
+  <pre><code>x **= 10; // Same as x = x ** 10</code></pre>
+
+  <h2>Comparison Operators</h2>
+  <p><strong>Equal to (==):</strong></p>
+  <pre><code>2 == 2;  // true
+2 == '2';  // true</code></pre>
+  <p><strong>Strict equal to (===):</strong></p>
+  <pre><code>2 === 2;  // true
+2 === '2';  // false</code></pre>
+  <p><strong>Not equal to (!=):</strong></p>
+  <pre><code>2 != 2;  // false
+2 != '2';  // false</code></pre>
+  <p><strong>Strict not equal to (!==):</strong></p>
+  <pre><code>2 !== 2;  // false
+2 !== '2';  // true</code></pre>
+  <p><strong>Greater than (>):</strong></p>
+  <pre><code>10 > 5; // true</code></pre>
+  <p><strong>Less than (<):</strong></p>
+  <pre><code>10 < 5; // false</code></pre>
+  <p><strong>Greater than or equal (>=):</strong></p>
+  <pre><code>10 >= 5; // true</code></pre>
+  <p><strong>Less than or equal (<=):</strong></p>
+  <pre><code>10 <= 5; // false</code></pre>
+
+  <h2>== vs ===</h2>
+  <p>The <code>==</code> operator compares values and performs type coercion, while the <code>===</code> operator compares both value and type. It is generally recommended to use <code>===</code> for stricter comparison.</p>
+</body>
+</html>

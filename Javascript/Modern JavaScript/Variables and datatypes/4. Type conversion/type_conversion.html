@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type Conversion in JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    h1, h2, h4 {
+      color: #333;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Type Conversion</h1>
+  <p>In programming, <strong>type conversion</strong> or <strong>type casting</strong> is the process of explicitly converting a value from one type to another. For instance, you may have a string value of <strong>'5'</strong> and you want to convert it to a number value of <strong>5</strong> so that you can do some arithmetic operations on it.</p>
+  <p><strong>Type Coercion</strong>, can also be explicit, but also refers to the automatic or implicit conversion of values from one data type to another. We will talk about this in another video.</p>
+
+  <h2>Converting Types</h2>
+  <p>There are a few different ways that we can convert types.</p>
+  <p>We have a variable with the string of '100'</p>
+  <pre><code>let amount = '100';</code></pre>
+
+  <h4>parseInt()</h4>
+  <p>We can convert it to a number type with the <code>parseInt()</code> function</p>
+  <pre><code>amount = parseInt(amount);</code></pre>
+
+  <h4>toString()</h4>
+  <p>If we want to convert it back to a string, we can use the <code>toString()</code> method</p>
+  <pre><code>amount = amount.toString();</code></pre>
+  <p>A <strong>method</strong> is just a function that belongs to an object.</p>
+  <p>JavaScript creates a temporary wrapper object to run <code>toString()</code> on primitive numbers.</p>
+
+  <h4>Number()</h4>
+  <p>Another way to convert a string to a number is by wrapping it in the <code>Number()</code> method</p>
+  <pre><code>amount = Number(amount);</code></pre>
+
+  <h4>String()</h4>
+  <p>We can convert something to a string using the <code>String()</code> method</p>
+  <pre><code>amount = String(amount);</code></pre>
+
+  <h2>Decimals</h2>
+  <p>Use <code>parseFloat()</code> to convert a string to a decimal:</p>
+  <pre><code>let amount2 = 5.5;
+amount2 = parseFloat(amount2);</code></pre>
+
+  <h2>Boolean Values</h2>
+  <p>We can convert booleans using <code>Number()</code> and <code>Boolean()</code>:</p>
+  <pre><code>let x = true;
+x = Number(x);</code></pre>
+  <pre><code>x = Boolean(x);</code></pre>
+  <p>The following will give us the string <strong>true</strong>:</p>
+  <pre><code>x = String(x);</code></pre>
+
+  <h2>NaN</h2>
+  <p>Using <code>Number()</code> on a non-numeric string results in <code>NaN</code>:</p>
+  <pre><code>let str = 'Hello';
+let num = Number(str);</code></pre>
+  <img src="file://C:/Users/noje/Desktop/CODING/JAVASCRIPT/JavaScript/premium_docs/01-variables-data-types-docs/images/nan.png?msec=1736926705731" alt="NaN Example">
+  <p><code>NaN</code> stands for <strong>Not a Number</strong>. It results from:</p>
+  <ul>
+    <li>Parsing invalid numbers (e.g. <code>parseInt("blabla")</code>)</li>
+    <li>Invalid math operations (e.g. <code>Math.sqrt(-1)</code>)</li>
+    <li>Operations with <code>NaN</code> operands</li>
+    <li>Indeterminate forms (e.g. <code>0 * Infinity</code>)</li>
+    <li>Invalid operations involving strings (e.g. <code>"foo" / 3</code>)</li>
+  </ul>
+</body>
+</html>
