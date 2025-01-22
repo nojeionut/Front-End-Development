@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="javascript.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nesting, Concat, Spread & Array Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3, h4 {
+            color: #2c7a7b;
+        }
+        code {
+            background-color: #2d2d2d;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 12px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        section {
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Nesting, Concat, Spread & Array Object Methods</h1>
+
+    <p>To get you more familiar with arrays, we are going to look at nesting, concatenation, and the spread operator.</p>
+
+    <h2>Creating Arrays</h2>
+
+    <section>
+        <h3>Fruit Array</h3>
+        <pre><code>const fruits = ['apple', 'pear', 'orange'];</code></pre>
+        
+        <h3>Berries Array</h3>
+        <pre><code>const berries = ['strawberry', 'blueberry', 'raspberry'];</code></pre>
+    </section>
+
+    <h2>Nesting Arrays</h2>
+
+    <section>
+        <h3>Nesting berries inside fruits</h3>
+        <pre><code>fruits.push(berries);
+// ['apple', 'pear', 'orange', ['strawberry', 'blueberry', 'raspberry']]</code></pre>
+
+        <h4>Accessing Nested Values</h4>
+        <pre><code>fruits[3][1]; // 'blueberry'</code></pre>
+
+        <h4>Nesting with a New Variable</h4>
+        <pre><code>const allFruits = [fruits, berries];</code></pre>
+        <pre><code>allFruits[1][1]; // 'blueberry'</code></pre>
+    </section>
+
+    <h2>Concatenation</h2>
+
+    <section>
+        <h3>concat()</h3>
+        <p>Concatenate two arrays into one without nesting.</p>
+        <pre><code>const newArr = fruits.concat(berries);
+// ['apple', 'pear', 'orange', 'strawberry', 'blueberry', 'raspberry']</code></pre>
+    </section>
+
+    <h2>Spread Operator</h2>
+
+    <section>
+        <h3>Using the Spread Operator (...) </h3>
+        <p>The spread operator expands arrays into individual elements.</p>
+        <pre><code>const newArr2 = [...fruits, ...berries];
+// ['apple', 'pear', 'orange', 'strawberry', 'blueberry', 'raspberry']</code></pre>
+    </section>
+
+    <h2>Flattening Arrays</h2>
+
+    <section>
+        <h3>flat()</h3>
+        <p>Flatten an array to a single level.</p>
+        <pre><code>const arr = [1, 2, [3, 4, 5], 6, [7, 8, [9, 10, [11, 12]]]];
+const flatArr = arr.flat(Infinity);
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]</code></pre>
+    </section>
+
+    <h2>Static Properties on the Array Object</h2>
+
+    <section>
+        <h3>Array.isArray()</h3>
+        <p>Check if a variable is an array.</p>
+        <pre><code>Array.isArray(fruits); // true
+Array.isArray('Hello'); // false</code></pre>
+    </section>
+
+    <section>
+        <h3>Array.from()</h3>
+        <p>Convert array-like objects into arrays.</p>
+        <pre><code>Array.from('12345'); // ['1', '2', '3', '4', '5']</code></pre>
+    </section>
+
+    <section>
+        <h3>Array.of()</h3>
+        <p>Create an array from a list of arguments.</p>
+        <pre><code>const a = 1;
+const b = 2;
+const c = 3;
+
+const y = Array.of(a, b, c); // [1, 2, 3]</code></pre>
+    </section>
+
+</body>
+</html>

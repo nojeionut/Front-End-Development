@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literals in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+        }
+        pre {
+            background: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+            color: #d6336c;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object Literals</h1>
+    <p>
+        A very common JavaScript data structure that holds key/value pairs is called an <code>object literal</code>. We can also create objects using a <code>constructor</code>, but the object literal syntax is used most often. The object literal is a <strong>singleton</strong>, meaning it is a <strong>single instance</strong> of the object. With a constructor, multiple instances of the object can be created.
+    </p>
+    <p>
+        Below is an example of the syntax to create a new object:
+    </p>
+    <img src="image.png" alt="Object literal syntax">
+    <p>
+        An object is essentially a set of <strong>properties</strong> with <strong>key/value</strong> pairs. The <em>key</em> is often called the <em>property name</em>.
+    </p>
+
+    <pre><code>const person = {
+  name: 'John',
+  age: 30,
+  location: 'Boston',
+  hobbies: ['movies', 'music'],
+  isAdmin: false,
+};</code></pre>
+
+    <h2>Accessing Property Values</h2>
+    <p>We can use dot notation or bracket notation to access property values:</p>
+
+    <pre><code>// Dot notation
+person.name; // John
+
+// Bracket notation
+person['name']; // John</code></pre>
+
+    <p>To access the first hobby in the array:</p>
+
+    <pre><code>person.hobbies[0]; // movies</code></pre>
+
+    <h2>Adding & Updating Properties</h2>
+    <p>To programmatically add or change properties:</p>
+
+    <pre><code>person.email = 'john@gmail.com'; // Add a new property
+person.isAdmin = true; // Update an existing property</code></pre>
+
+    <h2>Removing Properties</h2>
+    <p>To remove a property, use the <code>delete</code> keyword:</p>
+
+    <pre><code>delete person.isAdmin;</code></pre>
+
+    <h2>Adding Functions to Objects</h2>
+    <p>We can store functions as properties of an object:</p>
+
+    <pre><code>person.greet = function () {
+  console.log('Hello, my name is ' + this.name);
+};
+
+person.greet(); // Hello, my name is John</code></pre>
+
+    <p>Notice the use of the <code>this</code> keyword to refer to the object itself.</p>
+
+    <h2>Using Multiple Words in Property Names</h2>
+    <p>To use multiple words as a property name, wrap the property name in quotes:</p>
+
+    <pre><code>const person2 = {
+  'first name': 'Brad',
+  'last name': 'Traversy',
+};
+
+person2['first name']; // Brad</code></pre>
+</body>
+</html>

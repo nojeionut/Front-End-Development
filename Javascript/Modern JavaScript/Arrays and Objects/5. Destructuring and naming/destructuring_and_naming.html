@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="javascript.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring & Naming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h4 {
+            color: #555;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Destructuring & Naming</h1>
+
+    <h4>Variables with the same name</h4>
+    <p>In some cases, we may have a variable that we want to add as an object property value. If a property name (key) is the same as the variable name for the value, we can withdraw the variable name of the value. For example:</p>
+    <pre><code>const firstName = 'John';
+const lastName = 'Doe';
+const age = 30;
+</code></pre>
+
+    <p>Here I will put the variables above as the values for each property of the object. I will use the same variable names as the property names.</p>
+    <pre><code>const person = {
+  firstName: firstName,
+  lastName: lastName,
+  age: age
+};
+</code></pre>
+
+    <p>We can shorten this code by removing the variable names from the property values. The variable names are the same as the property names, so we can remove them.</p>
+    <pre><code>const person = {
+  firstName,
+  lastName,
+  age
+};
+</code></pre>
+
+    <h4>Destructuring an object</h4>
+    <p>Destructuring allows us to pull values/variables out of an object.</p>
+    <pre><code>const todo = {
+  id: 1,
+  title: 'Take out trash',
+};
+
+const { id, title } = todo;
+
+console.log(id, title); // 1, 'Take out trash'
+</code></pre>
+
+    <p>We can also go multiple levels deep:</p>
+    <pre><code>const todo = {
+  id: 1,
+  title: 'Take out trash',
+  user: {
+    name: 'John',
+  },
+};
+
+const {
+  user: { name },
+} = todo;
+
+console.log(name); // John
+</code></pre>
+
+    <p>If we want to rename the properties, we can do that too:</p>
+    <pre><code>const { id: todoId } = todo;
+
+console.log(todoId); // 1
+</code></pre>
+
+    <h4>Destructuring an array</h4>
+    <p>We can also destructure arrays. I personally don't destructure arrays as much as I do objects.</p>
+    <pre><code>const numbers = [10, 20, 30, 40];
+
+const [firstNumber, secondNumber] = numbers;
+
+console.log(firstNumber, secondNumber); // 10, 20
+</code></pre>
+
+    <h4>The rest operator</h4>
+    <p>The spread operator (<code>...</code>) can be used here, but in this situation, we call it the <strong>rest operator</strong>. It puts the "rest" of the values in an array.</p>
+    <pre><code>const [firstNumber, secondNumber, ...rest] = numbers;
+
+console.log(rest); // [30, 40]
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Intro to JSON</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 20px;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    pre {
+      background: #eef;
+      padding: 10px;
+      border-left: 4px solid #2c3e50;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>An Intro to JSON</h1>
+  <p><strong>JSON</strong> is something that you will be working with a lot as a JavaScript developer. <strong>JSON</strong> stands for <strong>JavaScript Object Notation</strong> and is a lightweight data-interchange format. It is essentially a way of storing data in a simple, human-readable format.</p>
+  <p>In web development, especially in JavaScript, we work with APIs that send and receive data to and from a server. Several years ago, XML (Extensible Markup Language) was the standard for sending data, but in more recent years, JSON has become the standard.</p>
+  <p>An example of an API that you can make a request to right now and see the JSON response would be the Github API. In your browser, go to the following URL:</p>
+  <p><a href="https://api.github.com/users/bradtraversy" target="_blank">https://api.github.com/users/bradtraversy</a></p>
+  <p>You will see the result is in JSON format.</p>
+  <p>The reason I want to talk about JSON right now is because we are talking about JavaScript object literals and the syntax that JSON uses is extremely similar. JSON uses curly braces of key/value pairs. Let's look at an example of a JSON object:</p>
+  <pre><code>{
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}</code></pre>
+  <p>The main difference here is that the keys have double quotes around them. These are required and they must be double quotes. As far as the values, strings must be wrapped in double quotes. Numbers and booleans do not.</p>
+  <p>We have methods available to turn JavaScript objects into JSON strings and vice versa.</p>
+  <pre><code>const obj = {
+  name: 'John',
+  age: 30,
+  city: 'New York',
+};
+
+// Turn object into JSON string
+const str = JSON.stringify(obj);
+console.log(str); // {"name":"John","age":30,"city":"New York"}
+
+// Turn JSON string into object
+const obj2 = JSON.parse(str);
+console.log(obj2); // {name: "John", age: 30, city: "New York"}</code></pre>
+  <p>Aside from <code>stringify()</code> and <code>parse()</code>, there isn't really anything else to learn about the JSON object. You will use these two methods a lot though, whether you are on the front-end or back-end.</p>
+  <p>We cannot access properties from a JSON string.</p>
+  <pre><code>console.log(str.name); // undefined</code></pre>
+  <p>If we try and get the index of a JSON string, we will get the character, because it is treated as a string.</p>
+  <pre><code>console.log(str[0]); // "{"</code></pre>
+  <h2>JSON Arrays</h2>
+  <p>We have JSON objects like the one above, but JSON can also have arrays. We can also set arrays as a property value.</p>
+  <pre><code>[
+  {
+    "name": "John",
+    "age": 30,
+    "city": "New York",
+    "hobbies": ["basketball", "cooking"]
+  },
+  {
+    "name": "Jane",
+    "age": 20,
+    "city": "LA",
+    "hobbies": ["movies", "sports"]
+  },
+  {
+    "name": "Jack",
+    "age": 25,
+    "city": "Paris",
+    "hobbies": ["music", "painting"]
+  }
+]</code></pre>
+  <p>We can parse it into a JavaScript object with <code>JSON.parse()</code>. Then we can access the properties.</p>
+  <pre><code>const arr = JSON.parse(str);
+console.log(arr[0].name); // John</code></pre>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Nesting, Spreading, Methods, and More</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #c7254e;
+            background: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object Nesting, Spreading, Methods, and More</h1>
+
+    <p>So we saw how to create object literals in JavaScript. I want to go a bit deeper and look at nesting, the spread operator, as well as some static methods on the <code>Object</code> constructor.</p>
+
+    <h2>Creating Objects</h2>
+    <p>First, I want to show you another way of creating objects that you may run into: by using the <code>Object</code> constructor.</p>
+    <pre><code>const todo = new Object();
+// Same as
+const todo = {};
+
+// Adding properties
+todo.id = 1;
+todo.title = 'Buy milk';
+todo.completed = false;</code></pre>
+
+    <p>Later on, when we get more into OOP, I'll show you how we can create our own object constructors to create multiple instances of the same object. For now, we'll stick with static object literals.</p>
+
+    <h2>Nesting Objects</h2>
+    <p>We can put objects inside other objects.</p>
+    <pre><code>const person = {
+  address: {
+    coords: {
+      lat: 42.3601,
+      lng: -71.0589,
+    },
+  },
+};
+
+// Accessing nested objects
+person.address.coords.lat;</code></pre>
+
+    <h2>Spread Operator</h2>
+    <p>The spread operator is used to <strong>spread</strong> object properties into a new object. Let's look at an example:</p>
+    <pre><code>const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 1, d: 4 };
+
+const obj3 = { ...obj1, ...obj2 }; // { a: 1, b: 2, c: 1, d: 4 }</code></pre>
+
+    <h2>Object.assign()</h2>
+    <p>We can achieve the same result as the spread operator using <code>Object.assign()</code>.</p>
+    <pre><code>const obj3 = Object.assign({}, obj1, obj2); // { a: 1, b: 2, c: 1, d: 4 }</code></pre>
+
+    <h2>Arrays of Objects</h2>
+    <p>In many cases, you will deal with arrays of objects.</p>
+    <pre><code>const people = [
+  { id: 1, name: 'John' },
+  { id: 2, name: 'Sara' },
+  { id: 3, name: 'Mike' },
+];
+
+// Accessing a property in an object within an array
+people[1].name; // Sara</code></pre>
+
+    <h2>Object Methods</h2>
+    <p>The <code>Object</code> constructor has some helpful methods we can use.</p>
+
+    <h3>keys()</h3>
+    <p>Get an array of all the keys in an object.</p>
+    <pre><code>Object.keys(person); // ['name', 'age', 'address']</code></pre>
+
+    <h3>Getting the Length of an Object</h3>
+    <p>To get the length of an object, use <code>Object.keys()</code> and then the <code>length</code> property.</p>
+    <pre><code>Object.keys(person).length; // 3</code></pre>
+
+    <h3>values()</h3>
+    <p>Get an array of all the values in an object.</p>
+    <pre><code>Object.values(person); // ['John', 30, { address }]</code></pre>
+
+    <h3>entries()</h3>
+    <p>Get an array of key/value pairs.</p>
+    <pre><code>Object.entries(person); // [['name', 'John'], ['age', 30], ['address', { address }]]</code></pre>
+
+    <h3>hasOwnProperty()</h3>
+    <p>Check if the object has a specific property.</p>
+    <pre><code>person.hasOwnProperty('name'); // true</code></pre>
+</body>
+</html>

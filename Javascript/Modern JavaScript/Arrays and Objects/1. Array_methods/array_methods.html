@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+        code {
+            background-color: #7a7373;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+        pre {
+            background-color: #272822;
+            color: #000000;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array Methods in JavaScript</h1>
+
+    <p>As we talked about earlier, arrays are a special kind of <code>object</code>. Objects have <code>properties</code> and <code>methods</code>. In JavaScript, those methods are stored in the <code>prototype chain</code>. We'll talk much more about prototypes later on, but we already saw that both <code>string objects</code> and <code>number objects</code> have properties and methods in their prototypes.</p>
+
+    <h2>Array Methods</h2>
+    
+    <section>
+        <h3>push()</h3>
+        <p>Push adds an element to the end of the array.</p>
+        <pre><code>arr.push(6); // [1, 2, 3, 4, 5, 6]</code></pre>
+    </section>
+    
+    <section>
+        <h3>pop()</h3>
+        <p>Pop removes the last element of the array.</p>
+        <pre><code>arr.pop(); // [1, 2, 3, 4, 5]</code></pre>
+    </section>
+
+    <section>
+        <h3>unshift()</h3>
+        <p>Adds an element to the beginning of the array.</p>
+        <pre><code>arr.unshift(0); // [0, 1, 2, 3, 4, 5]</code></pre>
+    </section>
+
+    <section>
+        <h3>shift()</h3>
+        <p>Takes an element off of the start of the array.</p>
+        <pre><code>arr.shift(); // [1, 2, 3, 4, 5]</code></pre>
+    </section>
+
+    <section>
+        <h3>reverse()</h3>
+        <p>I'll let you figure out what this does.</p>
+        <pre><code>arr.reverse(); // [5, 4, 3, 2, 1, 0]</code></pre>
+    </section>
+
+    <h2>Returning Values from an Array</h2>
+    <p>The methods above are all used to manipulate a current array. These methods are typically used to return some kind of value from an array.</p>
+
+    <section>
+        <h3>includes()</h3>
+        <p>Returns <code>true</code> if the array contains the value you pass in.</p>
+        <pre><code>arr.includes(5); // true</code></pre>
+    </section>
+
+    <section>
+        <h3>indexOf()</h3>
+        <p>Returns the index of the value you pass in.</p>
+        <pre><code>arr.indexOf(5); // 4</code></pre>
+    </section>
+
+    <section>
+        <h3>Return string from array</h3>
+        <pre><code>arr.toString(); // "1,2,3,4,5"</code></pre>
+        <pre><code>arr.join(); // "1,2,3,4,5"</code></pre>
+    </section>
+
+    <h2>slice() and splice()</h2>
+    <p>These are similar in that they both are used to return a new array using a subset of the current array.</p>
+
+    <section>
+        <h3>slice()</h3>
+        <p>slice() takes in two parameters. One being the starting index and one being the ending index.</p>
+        <pre><code>const newArr = arr.slice(1, 3); // [2, 3]</code></pre>
+    </section>
+
+    <section>
+        <h3>splice()</h3>
+        <p>splice() takes in the starting index and the number of elements from the starting index. If you leave off the number of elements, it will take from the starting index and on.</p>
+        <pre><code>const newArr = arr.splice(1, 3); // [2, 3, 4]</code></pre>
+    </section>
+
+    <section>
+        <h3>Removing a single element with splice()</h3>
+        <pre><code>const newArr = arr.splice(2, 1); // [3] the original array would be [1, 2, 4, 5]</code></pre>
+    </section>
+
+    <section>
+        <h3>Using negative values with slice()</h3>
+        <pre><code>const newArr = arr.slice(-2); // [4, 5]</code></pre>
+    </section>
+
+    <h2>Chaining Methods</h2>
+    <p>You can also chain these methods together. Just be aware of what is being returned from the previous method.</p>
+    <pre><code>x = arr.concat(arr2).reverse();</code></pre>
+    <pre><code>x = arr3.slice(1, 3).toString();</code></pre>
+
+</body>
+</html>

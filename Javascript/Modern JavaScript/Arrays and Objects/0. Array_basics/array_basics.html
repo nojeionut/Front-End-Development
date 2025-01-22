@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Array Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4 {
+      color: #333;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 3px;
+      color: #c7254e;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Array Basics</h1>
+  <p><code>Arrays</code> are a special type of <code>object</code> in JavaScript. Arrays are also what we call a <code>data structure</code>, which is just a way of structuring data.</p>
+
+  <img src="image.png" alt="Array Example">
+
+  <p>We create a variable and set it to some brackets with some values inside. The values could be of any type. In this case, we have an array of numbers.</p>
+
+  <pre><code>const arr = [374, 755, 398, 118, 289];
+console.log(arr);</code></pre>
+
+  <h3>Array Constructor</h3>
+  <p>You can also create an array using the <code>Array</code> constructor:</p>
+  <pre><code>const arr2 = new Array(1, 2, 3, 4, 5);</code></pre>
+
+  <h3>Getting Values by Index</h3>
+  <pre><code>arr[0];
+arr[0] + arr[3]; // 492</code></pre>
+
+  <h3>Different Types of Arrays</h3>
+  <pre><code>const fruit = ['apples', 'oranges', 'pears'];
+const mixed = [1, 'string', true, null, undefined, [1, 2, 3]];</code></pre>
+
+  <h3>Array Length</h3>
+  <pre><code>console.log(arr.length); // 5</code></pre>
+
+  <h3>Mutating Arrays</h3>
+  <p>Adding a new element to the end:</p>
+  <pre><code>fruit[fruit.length] = 'Peaches';</code></pre>
+
+  <p>Changing an existing value:</p>
+  <pre><code>fruit[1] = 'mangos';</code></pre>
+
+  <p>Shortening the array:</p>
+  <pre><code>fruit.length = 2;
+console.log(fruit); // ['apples', 'mangos']</code></pre>
+</body>
+</html>
