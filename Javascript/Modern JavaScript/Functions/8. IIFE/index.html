@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immediately Invoked Function Expressions (IIFE)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ddd;
+      overflow-x: auto;
+    }
+    code {
+      font-family: "Courier New", Courier, monospace;
+      color: #c7254e;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    h1 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Immediately Invoked Function Expressions (IIFE)</h1>
+
+  <p>Usually when we deal with functions, we define them and then when we want to run them, we call/invoke them. There may be times where you want to define a function and run it at the same time. In JavaScript, we can do this with an <strong>immediately invoked function expression</strong>, also called an IIFE (pronounced "Iffy").</p>
+
+  <h2>Why Use an IIFE?</h2>
+
+  <p>There are a few reasons why you may want to use an IIFE. One of the biggest reasons is to avoid <strong>global scope pollution</strong>.</p>
+
+  <p>If I have a second JavaScript file loading, whether I created it or it is some 3rd party library, etc., and in that file is something like this:</p>
+
+  <pre><code>const user = 'Brad';</code></pre>
+
+  <p>and then in my script I don't know about that global variable and I create a variable with the same name, it will break my script. Because we are defining two variables in the same scope.</p>
+
+  <pre><code>const user = 'John'; // Results in error</code></pre>
+
+  <p>To fix this, I could create an IIFE.</p>
+
+  <h2>IIFE Syntax</h2>
+
+  <p>The syntax for an IIFE is a little strange. You have to wrap the <code>function</code> keyword and the function body in parentheses. You then have another set of parentheses to indicate that it is an invocation, just like you would with a regular function call.</p>
+
+  <pre><code>(function() {
+  const user = 'John';
+  console.log(user); // John
+})();
+
+// Outside of IIFE
+console.log(user); // Brad</code></pre>
+
+  <p>When it comes to global scope pollution, if you have a small script with little to no dependencies, this most likely won't be a problem. If you have a larger project, especially if multiple people are working on it, then you may want to use an IIFE because you don't know exactly which variables and functions have been defined.</p>
+
+  <h2>Adding Parameters</h2>
+
+  <p>You can also create an IIFE that takes parameters.</p>
+
+  <pre><code>(function (name) {
+  console.log('Hello ' + name);
+})('John');
+
+// Hello John</code></pre>
+
+  <h2>Using Arrow Functions</h2>
+
+  <p>We can also use the arrow function syntax to create an IIFE.</p>
+
+  <pre><code>(() => {
+  console.log('Hello from the IIFE!');
+})();</code></pre>
+
+  <h2>Named IIFE</h2>
+
+  <p>The examples above are all unnamed functions. We can give IIFEs a name, however, the function name would only be available from within the IIFE. So we could use something called <strong>recursion</strong>, which is when a function calls itself. The function would not be available outside the IIFE. I would not suggest running the function within itself, because it will cause an infinite loop.</p>
+
+  <pre><code>(function hello() {
+  console.log('Hello from the IIFE!');
+
+  hello(); // Causes infinite loop
+})();
+
+hello(); // Error: hello is not defined</code></pre>
+
+  <p>IFFEs are also used in specific design patterns such as the <strong>revealing module pattern</strong>, which I will talk about later.</p>
+</body>
+</html>

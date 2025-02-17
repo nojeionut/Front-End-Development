@@ -115,5 +115,3 @@ const json_file_from_array = JSON.stringify(object_array);
 console.log(json_file_from_array);
 
 
-
-// object challenge

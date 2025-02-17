@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Functions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ddd;
+      overflow-x: auto;
+    }
+    code {
+      font-family: "Courier New", Courier, monospace;
+      color: #c7254e;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    h1 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Arrow Functions</h1>
+
+  <p>Arrow functions were introduced in <strong>ES6</strong> or <strong>ES2015</strong>. They are a shorter syntax for writing functions with some advantages such as being more compact, implicit returns, and lexical scope. Let's look at the syntax.</p>
+
+  <h2>Traditional Function</h2>
+
+  <p>First off, let's look at a simple traditional function:</p>
+
+  <pre><code>function add(a, b) {
+  return a + b;
+}
+
+add(1, 2); // 3</code></pre>
+
+  <h2>Arrow Function</h2>
+
+  <p>Now let's look at the same thing written as an arrow function:</p>
+
+  <pre><code>const add = (a, b) => {
+  return a + b;
+};
+
+add(1, 2); // 3</code></pre>
+
+  <p>There are a few things to note here. First, we took away the <code>function</code> keyword and instead added a variable declaration. This is because arrow functions are always anonymous functions, so we need to assign them to a variable in this case.</p>
+
+  <p>Secondly, we added what we call a <code>fat arrow</code> to the function, which is an equal sign and a greater-than sign. Sometimes, arrow functions are referred to as <code>fat-arrow functions</code>.</p>
+
+  <h3>Implicit Return</h3>
+
+  <p>We can actually shorten this particular function a bit more, because it only has one line of code that is a single expression. In this case, we can remove the curly braces and the return statement. If there were multiple lines of code (statements), we would need to add the curly braces and the return statement.</p>
+
+  <pre><code>const add = (a, b) => a + b;
+
+add(1, 2); // 3</code></pre>
+
+  <p>Instead of explicitly returning the result, <code>a + b</code> will be returned implicitly. When we don't use the <code>return</code> keyword, it is called an <strong>implicit return</strong>. If there were more than one line of code in the function, we would have to use the curly braces and the <code>return</code> keyword.</p>
+
+  <h3>Returning an Object Literal</h3>
+
+  <p>Where you can run into an issue with implicit returns is when you want to return an object literal.</p>
+
+  <p>Be sure that you use parentheses around the curly braces if you want to return an object literal implicitly.</p>
+
+  <pre><code>const createObj = () => ({ name: 'John' });</code></pre>
+
+  <h3>Single Argument Shorthand</h3>
+
+  <p>Another cool feature of arrow functions is that we can remove the parentheses around the argument if it is a single argument.</p>
+
+  <p>If you are using VS Code with Prettier as I am, it may add the parentheses automatically.</p>
+
+  <pre><code>const add10 = (a) => a + 10;
+
+add10(1); // 11</code></pre>
+
+  <h3>Anonymous Functions</h3>
+
+  <p>Many times we don't want to use a named function, but instead want to use an anonymous function. This is useful when we want to use a function as a callback. We can use an arrow function in this case as well.</p>
+
+  <p>I know we have not gone over high-order array methods like <code>forEach()</code> yet (we will very soon), but just to give you an idea of how this works, let's create an array with some numbers.</p>
+
+  <pre><code>const numbers = [1, 2, 3, 4, 5];</code></pre>
+
+  <p>The <code>forEach()</code> method can be used to iterate over an array. It takes a callback function as an argument. The callback function will be called for each element in the array.</p>
+
+  <pre><code>numbers.forEach(function (number) {
+  console.log(number);
+});</code></pre>
+
+  <p>To shorten this to one line, we can use an arrow function:</p>
+
+  <pre><code>numbers.forEach((number) => console.log(number));</code></pre>
+</body>
+</html>

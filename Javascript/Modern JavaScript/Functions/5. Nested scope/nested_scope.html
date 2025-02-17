@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Scope in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nested Scope</h1>
+
+    <h2>Nested Functions</h2>
+    <p>In JavaScript, we can also define a function within a function. This is called a <code>nested function</code>. This relates to something called <code>closures</code>, which we will talk about later. When it comes to scope, any variable defined in the parent function is available to the nested/child function, but not the other way around.</p>
+
+    <pre><code>function first() {
+    const x = 500;
+
+    function second() {
+        const y = 600;
+        console.log(x); // 500
+    }
+
+    console.log(y); // ReferenceError: y is not defined
+
+    second();
+}
+
+first();
+</code></pre>
+
+    <p>As you can see, the <code>x</code> variable is defined in <code>first()</code>, so we have access to it in the child function, <code>second()</code>. However, the <code>y</code> variable is defined in <code>second()</code>, so we can't access it in the parent function, <code>first()</code>. We can access variables from parents but cannot access variables from child functions.</p>
+
+    <h2>Nested If</h2>
+    <p>Just like with functions, we can access the parent block scope, but not the nested/child scope.</p>
+
+    <pre><code>if (true) {
+    const x = 100;
+    // Nested if
+    if (x === 100) {
+        const y = 200;
+        console.log(x + y); // 300
+    }
+
+    // console.log(y); // ReferenceError: y is not defined
+}
+
+// console.log(y); // ReferenceError: y is not defined
+</code></pre>
+</body>
+</html>

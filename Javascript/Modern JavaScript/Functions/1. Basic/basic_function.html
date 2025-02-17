@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "script.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    pre {
+      background: #eef;
+      padding: 10px;
+      border-left: 4px solid #2c3e50;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Function Basics</h1>
+  <p>Functions are a way to group code together. They make code more readable and easier to understand. Let's look at some of the basics.</p>
+  
+  <h2>Creating a function</h2>
+  <p>Creating or defining a function is simple. We use the <code>function</code> keyword, followed by the name of the function, followed by parentheses. Then we create the function body wrapped in curly braces.</p>
+  <pre><code>function sayHello() {
+  console.log('Hello World');
+}</code></pre>
+  <p>When we create a function, we don't add a semi-colon at the end of the curly braces.</p>
+  <p>Just creating the function does not execute any code. We need to "call" or "invoke" the function to execute the code within it.</p>
+  <pre><code>sayHello(); // Hello World</code></pre>
+  
+  <h3>Function Parameters</h3>
+  <p>You can define parameters for functions to allow the user to input specific data when calling the function.</p>
+  <pre><code>function add(x, y) {
+  console.log(x + y);
+}
+
+add(5, 5); // 10</code></pre>
+  
+  <h4>Parameters vs. Arguments</h4>
+  <ul>
+    <li><strong>Parameters</strong> are the names of the variables that are used to pass data into a function.</li>
+    <li><strong>Arguments</strong> are the values that are passed into the function.</li>
+  </ul>
+  
+  <h3>Returning a value</h3>
+  <p>The function that we created just console logs a message. In the real world, you'll usually want to return a value from a function.</p>
+  <p>Anything that you put after the return will not get executed because you are essentially ending the function and returning to the parent scope.</p>
+  <pre><code>function subtract(x, y) {
+  return x - y;
+
+  // This code will not execute
+  console.log('After the return');
+}
+
+// This will not output anything
+subtract(10, 5);
+
+// You could log the value like this
+console.log(subtract(10, 5)); // 5
+
+// Usually we do something with the return value, like store it in a variable
+const result = subtract(10, 5);</code></pre>
+  <p>You can also return without a value. This is useful for functions that don't return anything. You may have a function to update or delete some data on a server, but don't have a need to return anything.</p>
+</body>
+</html>

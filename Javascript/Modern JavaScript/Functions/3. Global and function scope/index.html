@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src = "javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global & Function Scope</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    h1, h2, h3, h4 {
+      color: #2c3e50;
+    }
+    pre {
+      background: #eef;
+      padding: 10px;
+      border-left: 4px solid #2c3e50;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 5px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Global & Function Scope</h1>
+  <p><strong>Scope</strong> is an important concept, not only in JavaScript, but in many other programming languages. Scope is the current area or context of a specific piece of code. There are certain rules for what is accessible in specific scopes.</p>
+  <img src="image.png" alt="Function Scope Diagram">
+
+  <h2>Global Scope</h2>
+  <p>In JavaScript, when we write code in the <code>global scope</code> it is available everywhere, including functions. If we are NOT inside of a function or any kind of block, such as an if statement or a loop, then we are in the <code>global scope</code>.</p>
+
+  <h3>The <code>window</code> object</h3>
+  <p>The browser creates a global object called <code>window</code>. This object has a ton of methods and properties on it that are available to us that we'll be looking at later on in the course.</p>
+  <p>The <code>alert</code> method belongs to the window object.</p>
+  <pre><code>window.alert('Hello World');</code></pre>
+  <p>Since the window object is the most top-level object in the browser environment, we don't need to use <strong>window</strong></p>
+  <pre><code>alert('Hello World');</code></pre>
+  <p>There is an <code>innerWidth</code> property on the window object. We could use that anywhere as well</p>
+  <pre><code>console.log(window.innerWidth);</code></pre>
+  <p>We can use it in a function as well because it is global</p>
+  <pre><code>function run() {
+  console.log(window.innerWidth);
+}</code></pre>
+
+  <h3>Creating globally scoped variables</h3>
+  <p>If I simply create a variable at the top of a JavaScript file, this is a global variable in the global scope and I can access it anywhere.</p>
+  <pre><code>const x = 100;
+console.log(x); // 100</code></pre>
+  <p>If we try to access x in the <code>run()</code> function, we can because it's global.</p>
+  <pre><code>function run() {
+  console.log(x); // 100
+}</code></pre>
+
+  <h2>Function Scope</h2>
+  <p>Function scope is the scope that is available to all code inside of a function. Any variables we define here will be available only inside of the function.</p>
+  <pre><code>function add() {
+  const y = 50;
+}
+
+console.log(y); // ReferenceError: y is not defined</code></pre>
+  <p>Since <code>x</code> is global, I could use that in the <code>add()</code> function</p>
+  <pre><code>function add() {
+  const y = 50;
+  console.log(x + y); // 150
+}</code></pre>
+  <p>If I create a variable called <code>x</code> in the function, it will overwrite the global variable and I can no longer access it. This is called <strong>variable shadowing</strong>.</p>
+  <pre><code>function add() {
+  const x = 1;
+  const y = 50;
+  console.log(x + y); // 51
+}</code></pre>
+
+  <h2>Local Scope</h2>
+  <p>Whatever scope we are currently working in or talking about is called the <code>local scope</code>.</p>
+</body>
+</html>
